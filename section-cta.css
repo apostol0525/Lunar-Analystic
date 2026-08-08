@@ -1,15 +1,15 @@
 .cta-block {
-    background: #0C2E8B;
-    width: 100%;
-    padding: 120px 20px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 35px;
-    border-radius: 15px;
+    width: 100%;
+    padding: 120px 20px;
     margin-top: 8rem;
-    position: relative;
+    border-radius: 15px;
+    background: #0C2E8B;
     overflow: hidden;
 }
 
@@ -17,13 +17,13 @@
 .cta-block::before {
     content: '';
     position: absolute;
+    top: -60px;
+    left: -40px;
     width: 300px;
     height: 300px;
     border-radius: 50%;
     background: rgba(4, 15, 60, 0.6);
     filter: blur(80px);
-    top: -60px;
-    left: -40px;
     animation: float1 8s ease-in-out infinite;
     pointer-events: none;
 }
@@ -32,53 +32,53 @@
 .cta-block::after {
     content: '';
     position: absolute;
+    bottom: -50px;
+    right: -30px;
     width: 250px;
     height: 250px;
     border-radius: 50%;
     background: rgba(10, 5, 60, 0.55);
     filter: blur(80px);
-    bottom: -50px;
-    right: -30px;
     animation: float2 10s ease-in-out infinite;
     pointer-events: none;
 }
 
-/* Orb 3 — cyan, center via box-shadow on a hidden element */
+/* Orb 3 — cyan, center */
 .cta-block h3::before {
     content: '';
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 200px;
     height: 200px;
     border-radius: 50%;
     background: rgba(2, 10, 50, 0.5);
     filter: blur(70px);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     animation: float3 12s ease-in-out infinite;
     pointer-events: none;
     z-index: -1;
 }
 
 .cta-block h3 {
+    position: relative;
+    z-index: 1;
     max-width: 900px;
     color: var(--white);
     font-size: 2.3rem;
     font-weight: 600;
     text-align: center;
-    position: relative;
-    z-index: 1;
 }
 
 .cta-btn {
+    position: relative;
+    z-index: 1;
     padding: 15px 25px;
     border: none;
     border-radius: 15px;
     background: var(--white);
     font-size: 1.2rem;
     font-weight: 600;
-    position: relative;
-    z-index: 1;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -130,6 +130,7 @@
     }
 }
 
+/* Responsive Media Queries */
 @media (max-width: 992px) {
     .cta-block {
         margin-top: 5rem;

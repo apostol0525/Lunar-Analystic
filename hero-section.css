@@ -1,6 +1,6 @@
 .hero-section {
     position: relative;
-    background-color: #fff;
+    background-color: var(--white);
     overflow: hidden;
 }
 
@@ -16,7 +16,7 @@
         radial-gradient(circle at 80% 65%, rgba(59, 130, 246, 0.12), transparent 35%);
     background-size: 70px 70px, 70px 70px, 100% 100%, 100% 100%;
     background-position: 0 0, 0 0, 0 0, 0 0;
-    background-color: #ffffff;
+    background-color: var(--white);
     opacity: 0.75;
     z-index: 0;
     pointer-events: none;
@@ -48,7 +48,7 @@
     align-items: center;
     gap: 2rem;
     margin-top: 3rem;
-     position: relative;
+    position: relative;
     z-index: 1;
 }
 
@@ -71,12 +71,12 @@
 .hero-text button {
     padding: 15px 30px;
     background-color: var(--blue);
-    color: #fff;
+    color: var(--white);
     border: none;
     border-radius: 15px;
     font-size: 1.2rem;
-    cursor: pointer;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .hero-img {
@@ -84,7 +84,7 @@
     border-radius: 1.5rem;
     box-shadow: 0px 25px 80px 4px rgba(134, 155, 238, 0.25);
     background-color: #eef2fb;
-    background-image: radial-gradient(rgba(99, 132, 214, .25) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(99, 132, 214, 0.25) 1px, transparent 1px);
     background-size: 10px 10px;
 }
 
@@ -96,6 +96,7 @@
     border-radius: 1rem;
 }
 
+/* Responsive Media Queries */
 @media (max-width: 992px) {
     .hero-content {
         flex-direction: column;

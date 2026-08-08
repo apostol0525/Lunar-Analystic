@@ -1,13 +1,11 @@
 .section-testomontials {
-     background: linear-gradient(0deg, rgba(214, 228, 251, 1) 50%, rgba(255, 255, 255, 1) 100%);
-     padding-bottom: 6rem;
+    background: linear-gradient(0deg, rgba(214, 228, 251, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    padding-bottom: 6rem;
 }
-
 
 .section-testomontials .section-name {
     margin-top: 9rem;
 }
-
 
 .reviews-block {
     display: flex;
@@ -16,7 +14,6 @@
     gap: 80px;
     margin-top: 9rem;
 }
-
 
 .reviews-card {
     width: 100%;
@@ -38,6 +35,7 @@
     box-shadow: 9px 3px 36px rgba(0, 0, 0, 0.1);
 }
 
+/* Responsive Media Queries */
 @media (max-width: 992px) {
     .section-testomontials .section-name {
         margin-top: 4rem;

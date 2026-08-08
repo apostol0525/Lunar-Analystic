@@ -23,7 +23,7 @@
     height: 48px;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    background: #ffffff;
+    background: var(--white);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     color: var(--black);
     cursor: pointer;
@@ -35,8 +35,8 @@
 }
 
 .arrow:hover {
-    background-color: #008CFF;
-    color: #ffffff;
+    background-color: var(--blue);
+    color: var(--white);
     box-shadow: 0 8px 20px rgba(0, 140, 255, 0.35);
 }
 
@@ -168,20 +168,23 @@
 }
 
 .dot.active {
-    background-color: #008CFF;
+    background-color: var(--blue);
     width: 24px;
     border-radius: 6px;
 }
 
+/* Responsive Media Queries */
 @media (max-width: 1300px) {
     .carousel-wrapper {
         max-width: 100%;
         padding: 0 45px;
         box-sizing: border-box;
     }
+
     .arrow-left {
         left: 2px;
     }
+
     .arrow-right {
         right: 2px;
     }
