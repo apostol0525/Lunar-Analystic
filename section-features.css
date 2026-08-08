@@ -1,0 +1,230 @@
+.section-features {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, rgba(214, 228, 251, 1) 50%, rgba(255, 255, 255, 1) 100%);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--gray-text);
+}
+
+.carousel-wrapper {
+    position: relative;
+    max-width: 1264px;
+    margin: 0 auto;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    color: var(--black);
+    cursor: pointer;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.arrow:hover {
+    background-color: #008CFF;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 140, 255, 0.35);
+}
+
+.arrow-left {
+    left: -28px;
+}
+
+.arrow-left:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.arrow-right {
+    right: -28px;
+}
+
+.arrow-right:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.features-card {
+    display: flex;
+    gap: 2rem;
+    margin-top: 5rem;
+    height: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 3%,
+            black 97%,
+            transparent 100%);
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 3%,
+            black 97%,
+            transparent 100%);
+}
+
+.features-card::-webkit-scrollbar {
+    display: none;
+}
+
+.card-system {
+    border-radius: 1.5rem;
+    padding: 1.25rem;
+    background: var(--white);
+    flex: 0 0 auto;
+    width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-system:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 140, 255, 0.12);
+}
+
+.card-system h4 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.card-text {
+    font-size: 1rem;
+    color: var(--gray-text);
+    font-weight: 600;
+    padding-top: 1rem;
+    min-height: 5rem;
+    margin-bottom: 1.25rem;
+}
+
+.card-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-tag p {
+    font-size: 1rem;
+    color: var(--black);
+    font-weight: 700;
+}
+
+.icon-block {
+    border-radius: 11px;
+    border: 1px solid #C3BDBD;
+    padding: 3px;
+}
+
+.block-img {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.block-img img {
+    width: 100%;
+    aspect-ratio: 16 / 13;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.card-system:hover .block-img img {
+    transform: scale(1.03);
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 3rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #C4BFBF;
+    cursor: pointer;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dot.active {
+    background-color: #008CFF;
+    width: 24px;
+    border-radius: 6px;
+}
+
+@media (max-width: 1300px) {
+    .carousel-wrapper {
+        max-width: 100%;
+        padding: 0 45px;
+        box-sizing: border-box;
+    }
+    .arrow-left {
+        left: 2px;
+    }
+    .arrow-right {
+        right: 2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-features {
+        padding: 3rem 0;
+    }
+
+    .features-card {
+        margin-top: 2rem;
+    }
+
+    .carousel-wrapper {
+        padding: 0 10px;
+    }
+
+    .arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .arrow-left {
+        left: 0;
+    }
+
+    .arrow-right {
+        right: 0;
+    }
+
+    .card-system {
+        width: 280px;
+        max-width: calc(100vw - 80px);
+        padding: 1rem;
+    }
+
+    .card-system h4 {
+        font-size: 1.3rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+        min-height: 3.5rem;
+    }
+}

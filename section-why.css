@@ -1,0 +1,207 @@
+
+.content {
+    position: relative;
+    z-index: 1;
+    margin-top: 9rem;
+}
+
+.section-why {
+   position: relative;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* Base subtle grid across section-why */
+.section-why::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(#e5e7eb 1.5px, transparent 1.5px), 
+        linear-gradient(to right, #e5e7eb 1.5px, transparent 1.5px),
+        radial-gradient(circle at 20% 25%, rgba(2, 135, 175, 0.2), transparent 35%),
+        radial-gradient(circle at 80% 65%, rgba(32, 101, 212, 0.12), transparent 35%);
+    background-size: 70px 70px, 70px 70px, 100% 100%, 100% 100%;
+    background-position: 0 0, 0 0, 0 0, 0 0;
+    background-color: #ffffff;
+    opacity: 0.75;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Interactive Spotlight around cursor with sharp grid + blue & cyan glow */
+.section-why::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle 120px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(59, 130, 246, 0.28), transparent 70%),
+        radial-gradient(circle 240px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(2, 135, 175, 0.22), transparent 75%),
+        linear-gradient(#3b82f6 1.5px, transparent 1.5px), 
+        linear-gradient(to right, #3b82f6 1.5px, transparent 1.5px);
+    background-size: 100% 100%, 100% 100%, 70px 70px, 70px 70px;
+    background-position: 0 0, 0 0, 0 0, 0 0;
+    -webkit-mask-image: radial-gradient(circle 260px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+    mask-image: radial-gradient(circle 260px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+    opacity: var(--spotlight-opacity, 0);
+    transition: opacity 0.4s ease;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.section-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.content-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.baydge {
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    border: 1px solid #887E7E;
+    background: #fff;
+}
+
+.baydge p {
+    font-size: 1rem;
+    color: var(--black);
+}
+
+.section-name h2 {
+    max-width: 600px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--black);
+    text-align: center;
+    font-weight: 600;
+}
+
+
+
+.flex-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 3.2rem;
+    margin-top: 3rem;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
+    row-gap: 1.5rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid #CEC9C9;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    background: var(--white);
+}
+
+.card h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    font-weight: 600;
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 8rem;
+}
+
+.comment img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.comment-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.comment-block h4 {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    ;
+    font-weight: 600;
+}
+
+.comment-text {
+    font-size: 2rem;
+    color: var(--black);
+    ;
+}
+
+.job {
+    font-size: 1.3rem;
+    color: var(--gray-text);
+}
+
+.comment-block span {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+@media (max-width: 992px) {
+    .content {
+        margin-top: 4rem;
+    }
+
+    .flex-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .comment {
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .comment {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .comment-text {
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    .job {
+        font-size: 1.05rem;
+    }
+
+    .card {
+        padding: 1.25rem 1rem;
+    }
+}

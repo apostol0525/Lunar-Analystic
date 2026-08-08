@@ -1,0 +1,225 @@
+.partners-ticker {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 4rem;
+    margin-bottom: 9rem;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.partners-track {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+    width: max-content;
+    animation: infiniteScroll 22s linear infinite;
+    will-change: transform;
+}
+
+.partners-ticker:hover .partners-track {
+    animation-play-state: paused;
+}
+
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.section-integrations .section-title {
+    max-width: 900px;
+}
+
+.section-integrations .content-title {
+    margin-top: 0;
+}
+
+.content-title span {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.company-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.company-block img {
+    max-width: 60px;
+    height: auto;
+}
+
+.company-block h4 {
+    font-size: 1.6rem;
+    color: var(--gray-text);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.solutions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-nav {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   padding: 4px;
+   border: 1px solid #887E7E;
+   border-radius: 30px;
+   background-color: #fff;
+   margin-top: 4rem;
+   max-width: 100%;
+   box-sizing: border-box;
+}
+
+.tabs__item {
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: none;
+  background: transparent;
+  color: var(--black);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.tabs__item--active {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+
+.salutions-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.tab-content {
+    display: none;
+    flex-direction: column;
+    gap: 35px;
+    align-items: flex-start;
+    background-color: #DAE3FF;
+    border-radius: 25px;
+    padding: 40px 30px;
+}
+
+.tab-content.active {
+    display: flex;
+    animation: tabFadeIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tabFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.985);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.flex-tab__title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tab__title {
+    font-size: 2rem;
+    font-weight: 600;
+    color:var(--blue);
+}
+
+.tab-text {
+    color: var(--gray-text);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.tab-btn {
+    border: none;
+    padding: 10px 40px;
+    border-radius: 30px;
+    background: var(--blue);
+    font-size: 1.2rem;
+    color: var(--white);
+}
+
+@media (max-width: 992px) {
+    .partners-ticker {
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+    }
+
+    .partners-track {
+        gap: 45px;
+        animation-duration: 18s;
+    }
+
+    .company-block h4 {
+        font-size: 1.3rem;
+    }
+
+    .company-block img {
+        max-width: 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tab-nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 20px;
+        padding: 6px;
+        margin-top: 2.5rem;
+    }
+
+    .tabs__item {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .salutions-content {
+        margin-top: 2rem;
+    }
+
+    .tab-content {
+        padding: 24px 18px;
+        gap: 16px;
+        border-radius: 18px;
+    }
+
+    .tab__title {
+        font-size: 1.35rem;
+    }
+
+    .tab-text {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .tab-btn {
+        padding: 8px 28px;
+        font-size: 1rem;
+    }
+}

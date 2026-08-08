@@ -1,0 +1,62 @@
+.section-testomontials {
+     background: linear-gradient(0deg, rgba(214, 228, 251, 1) 50%, rgba(255, 255, 255, 1) 100%);
+     padding-bottom: 6rem;
+}
+
+
+.section-testomontials .section-name {
+    margin-top: 9rem;
+}
+
+
+.reviews-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 9rem;
+}
+
+
+.reviews-card {
+    width: 100%;
+    padding: 40px 20px;
+    background: rgba(0, 51, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 25px;
+    border: 1px solid rgba(115, 112, 112, 0.5);
+}
+
+.reviews-card img {
+    width: 100%;
+    aspect-ratio: 15 / 20;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 1rem;
+    box-shadow: 9px 3px 36px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+    .section-testomontials .section-name {
+        margin-top: 4rem;
+    }
+
+    .reviews-block {
+        flex-direction: column;
+        gap: 35px;
+        margin-top: 4rem;
+    }
+
+    .reviews-card {
+        max-width: 500px;
+        padding: 24px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-testomontials {
+        padding-bottom: 3rem;
+    }
+}
