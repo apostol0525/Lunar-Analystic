@@ -22,22 +22,22 @@
     pointer-events: none;
 }
 
-/* Interactive Spotlight around cursor with sharp grid + pure orange glow */
+/* Interactive Magnifying Glass Lens around cursor with scaled-up grid + pure orange glow */
 .hero-section::after {
     content: "";
     position: absolute;
     inset: 0;
     background-image: 
-        radial-gradient(circle 120px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(249, 115, 22, 0.35), transparent 70%),
-        radial-gradient(circle 240px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(234, 88, 12, 0.22), transparent 75%),
-        linear-gradient(#f97316 1.5px, transparent 1.5px), 
-        linear-gradient(to right, #f97316 1.5px, transparent 1.5px);
-    background-size: 100% 100%, 100% 100%, 70px 70px, 70px 70px;
-    background-position: 0 0, 0 0, 0 0, 0 0;
-    -webkit-mask-image: radial-gradient(circle 260px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
-    mask-image: radial-gradient(circle 260px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+        radial-gradient(circle 110px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(249, 115, 22, 0.4), transparent 75%),
+        radial-gradient(circle 230px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(234, 88, 12, 0.2), transparent 80%),
+        linear-gradient(#f97316 2px, transparent 2px), 
+        linear-gradient(to right, #f97316 2px, transparent 2px);
+    background-size: 100% 100%, 100% 100%, 100px 100px, 100px 100px;
+    background-position: 0 0, 0 0, calc(var(--mouse-x, 0px) * -0.43) calc(var(--mouse-y, 0px) * -0.43), calc(var(--mouse-x, 0px) * -0.43) calc(var(--mouse-y, 0px) * -0.43);
+    -webkit-mask-image: radial-gradient(circle 230px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+    mask-image: radial-gradient(circle 230px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
     opacity: var(--spotlight-opacity, 0);
-    transition: opacity 0.4s ease;
+    transition: opacity 0.35s ease;
     z-index: 0;
     pointer-events: none;
 }
