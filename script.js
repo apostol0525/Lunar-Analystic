@@ -71,8 +71,8 @@ function initGridLens(sectionSelector, canvasSelector, glowRgb) {
     let currentOpacity = 0;
 
     const gridSize = 70; // Matches base CSS grid (70px x 70px)
-    const lensRadius = 220; // Radius of 3D lens dome
-    const maxDisplacement = 38; // Max 3D displacement at center for 3D dome "горкой"
+    const lensRadius = 160; // Compact, neat radius of 3D lens
+    const maxDisplacement = 18; // Soft, elegant 3D displacement at center (no harsh warping)
 
     function resize() {
         const rect = section.getBoundingClientRect();
@@ -107,8 +107,7 @@ function initGridLens(sectionSelector, canvasSelector, glowRgb) {
             return { x, y };
         }
 
-        // Spherical 3D dome curve: (1 - (dist / lensRadius)^2)^2
-        // Equal to 0 at boundary (dist = lensRadius), equal to 1 at exact center (dist = 0)
+        // Soft spherical 3D dome curve: (1 - (dist / lensRadius)^2)^2
         const factor = Math.pow(1 - Math.pow(dist / lensRadius, 2), 2);
         const push = maxDisplacement * factor;
         const normX = dx / dist;
@@ -141,8 +140,8 @@ function initGridLens(sectionSelector, canvasSelector, glowRgb) {
                         ctx.lineTo(pt.x, pt.y);
                     }
                 }
-                ctx.strokeStyle = `rgba(${glowRgb}, 0.85)`;
-                ctx.lineWidth = 1.8;
+                ctx.strokeStyle = `rgba(${glowRgb}, 0.8)`;
+                ctx.lineWidth = 1.5;
                 ctx.stroke();
             }
 
@@ -157,8 +156,8 @@ function initGridLens(sectionSelector, canvasSelector, glowRgb) {
                         ctx.lineTo(pt.x, pt.y);
                     }
                 }
-                ctx.strokeStyle = `rgba(${glowRgb}, 0.85)`;
-                ctx.lineWidth = 1.8;
+                ctx.strokeStyle = `rgba(${glowRgb}, 0.8)`;
+                ctx.lineWidth = 1.5;
                 ctx.stroke();
             }
 
@@ -166,7 +165,7 @@ function initGridLens(sectionSelector, canvasSelector, glowRgb) {
             ctx.globalCompositeOperation = 'destination-in';
             const maskGrad = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, lensRadius);
             maskGrad.addColorStop(0, 'rgba(0, 0, 0, 1)');
-            maskGrad.addColorStop(0.7, 'rgba(0, 0, 0, 0.85)');
+            maskGrad.addColorStop(0.75, 'rgba(0, 0, 0, 0.8)');
             maskGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
             ctx.fillStyle = maskGrad;
             ctx.fillRect(0, 0, width, height);
@@ -175,10 +174,10 @@ function initGridLens(sectionSelector, canvasSelector, glowRgb) {
 
             // 4. Soft Optical Lens Rim Glow
             ctx.save();
-            ctx.globalAlpha = currentOpacity * 0.4;
+            ctx.globalAlpha = currentOpacity * 0.35;
             const lensGrad = ctx.createRadialGradient(mouseX, mouseY, lensRadius * 0.2, mouseX, mouseY, lensRadius);
-            lensGrad.addColorStop(0, `rgba(${glowRgb}, 0.35)`);
-            lensGrad.addColorStop(0.6, `rgba(${glowRgb}, 0.12)`);
+            lensGrad.addColorStop(0, `rgba(${glowRgb}, 0.25)`);
+            lensGrad.addColorStop(0.7, `rgba(${glowRgb}, 0.08)`);
             lensGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
             ctx.fillStyle = lensGrad;
             ctx.beginPath();
