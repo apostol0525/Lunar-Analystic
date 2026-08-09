@@ -22,25 +22,7 @@
     pointer-events: none;
 }
 
-/* Interactive Magnifying Glass Lens around cursor with scaled-up grid + blue & cyan glow */
-.section-why::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: 
-        radial-gradient(circle 110px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(59, 130, 246, 0.35), transparent 75%),
-        radial-gradient(circle 230px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(2, 135, 175, 0.22), transparent 80%),
-        linear-gradient(#3b82f6 2px, transparent 2px), 
-        linear-gradient(to right, #3b82f6 2px, transparent 2px);
-    background-size: 100% 100%, 100% 100%, 100px 100px, 100px 100px;
-    background-position: 0 0, 0 0, calc(var(--mouse-x, 0px) * -0.43) calc(var(--mouse-y, 0px) * -0.43), calc(var(--mouse-x, 0px) * -0.43) calc(var(--mouse-y, 0px) * -0.43);
-    -webkit-mask-image: radial-gradient(circle 230px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
-    mask-image: radial-gradient(circle 230px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
-    opacity: var(--spotlight-opacity, 0);
-    transition: opacity 0.35s ease;
-    z-index: 0;
-    pointer-events: none;
-}
+
 
 .content {
     position: relative;
